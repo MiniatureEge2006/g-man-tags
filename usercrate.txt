@@ -1,0 +1,115 @@
+{set:user|{randuser}}
+{set:rarity|{choose:
+Stock%25|
+Standard%12|
+Unique%10|
+Strange%8|
+Unusual%7|
+Rare%6|
+Epic%5|
+Legendary%2|
+Godly%1
+}}
+
+{set:wtf|{choose:
+    On Hit: Kills everyone on the server|
+    Gives you 69420\% walk speed|
+    On Death: Uninstalls System32/Root directory|
+    You die after {range:1|60} seconds|
+    On Hit: Teleports you to a random dimension|
+    Spawns 100 bees that follow you|
+    On Equip: Reverses all player controls|
+    Turns all text upside down forever|
+    On Hit: Reboots the entire server|
+    You speak in pig latin for 1 minute|
+    On Death: Respawns as a chicken|
+    All your items become cursed|
+    On Equip: Swaps your gender visually|
+    On Hit: Freezes time for 10 seconds|
+    On Kill: Summons a clown parade|
+    All players see you as {randuser}|
+    On Equip: Turns gravity upside down|
+    On Hit: Replaces your avatar with a potato|
+    On Death: Plays an annoying sound globally|
+    On Hit: Everyone’s name turns into "Bob"
+}}
+
+{set:pros|{choose:
+    On Hit: Bleeds enemy for 6 seconds|
+    Gives you 20\% more walk speed|
+    You regenerate 5 hp every 5 seconds|
+    +10\% damage on next hit|
+    On Kill: Gain extra loot|
+    Reflect 10\% of incoming damage|
+    Immune to knockback for 5 seconds|
+    On Hit: Slows enemy by 30\% for 3 seconds|
+    Grants temporary shield for 100 HP|
+    Chance to dodge attacks by 15\%|
+    On Hit: Steal 10\% HP from target|
+    Increases jump height by 25\%|
+    On Death: Drop healing zone for allies|
+    +15\% XP gain for 10 seconds|
+    Reduces incoming status effect duration by 50\%|
+    On Hit: Blind enemy for 2 seconds|
+    Increases pickup range for loot|
+    Auto-resurrect once per life with 20\% HP|
+    On Hit: Mark enemy, increasing their damage taken by 20\% for 5 seconds|
+    You move silently, reducing enemy aggro|
+    On Hit: Poison enemy for 8 seconds|
+    +10\% critical hit chance|
+    On Hit: Knock enemies back slightly|
+    Your armor becomes unbreakable for 3 seconds|
+    On Hit: Burn enemy for 4 seconds|
+    +5\% movement speed per kill (stacks)|
+    On Kill: Restore 20\% health|
+    On Hit: Confuse enemy for 2 seconds|
+    On Respawn: Instant full heal|
+    On Hit: Summon a pet that deals minor damage
+}}
+
+{set:cons|{choose:
+    30\% less health on wearer|
+    20\% less damage on hit|
+    On Miss: Hit yourself. Idiot.|
+    Lose 10\% speed while equipped|
+    Cannot heal naturally|
+    On Death: Drop all your items|
+    -10\% max HP permanently while worn|
+    Status effects last 50\% longer|
+    On Hit: Occasionally deal self-damage|
+    Can't use abilities for 5 seconds after equip|
+    Takes double fall damage|
+    Consumes 1 ammo per attack automatically|
+    On Use: Randomly swaps your stats temporarily|
+    Causes loud noise, attracting enemies|
+    -15\% defense against magic attacks|
+    Cannot sprint while equipped|
+    On Hit: May blind you for 1 second|
+    -20\% XP gain while wearing|
+    On Equip: Set your position randomly nearby|
+    Drains 1 HP every 10 seconds|
+    On Hit: Occasionally miss entirely|
+    Movement jittery and uncontrollable at times|
+    Cannot interact with NPCs while equipped|
+    On Hit: Silences you for 3 seconds|
+    Taking damage occasionally stuns you|
+    On Equip: Lose 1 random ability|
+    On Hit: Slightly decreases your accuracy|
+    On Equip: Inverts controls for 5 seconds|
+    Decreases inventory space by 25\%|
+    On Hit: May cause friendly fire
+}}
+
+{set:color|{if:{get:rarity}|==|Stock|then:#b2b2b2|elif:{get:rarity}|==|Standard|then:#b8cba7|elif:{get:rarity}|==|Unique|then:#8650ac|elif:{get:rarity}|==|Strange|then:#8a4fff|elif:{get:rarity}|==|Unusual|then:#008080|elif:{get:rarity}|==|Rare|then:#ffbf00|elif:{get:rarity}|==|Epic|then:#00ffff|elif:{get:rarity}|==|Legendary|then:#aa0000|elif:{get:rarity}|==|Godly|then:#ff00ff
+}}
+
+{embed:
+title="You got: {get:rarity} {get:user}" 
+description="Level {range:0|100} User" 
+image={avatar:{get:user}} 
+color={get:color} 
+field1_name="Pros" 
+field1_value="{choose:{get:pros}%99|{get:wtf}%1}" 
+field2_name="Cons" 
+field2_value="{get:cons}"
+}
