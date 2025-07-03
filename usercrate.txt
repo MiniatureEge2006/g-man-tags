@@ -103,13 +103,33 @@ Godly%1
 {set:color|{if:{get:rarity}|==|Stock|then:#b2b2b2|elif:{get:rarity}|==|Standard|then:#b8cba7|elif:{get:rarity}|==|Unique|then:#8650ac|elif:{get:rarity}|==|Strange|then:#8a4fff|elif:{get:rarity}|==|Unusual|then:#008080|elif:{get:rarity}|==|Rare|then:#ffbf00|elif:{get:rarity}|==|Epic|then:#00ffff|elif:{get:rarity}|==|Legendary|then:#aa0000|elif:{get:rarity}|==|Godly|then:#ff00ff
 }}
 
-{embed:
-title="You got: {get:rarity} {get:user}" 
-description="Level {range:0|100} User" 
-image={avatar:{get:user}} 
-color={get:color} 
-field1_name="Pros" 
-field1_value="{choose:{get:pros}%99|{get:wtf}%1}" 
-field2_name="Cons" 
-field2_value="{get:cons}"
+{embed:{
+    "title":"You got {get:rarity} {get:user}",
+    "description":"Level {range:0|100} Discord user",
+    "image":
+    {
+        "url":"{avatar:{get:user}}"
+    },
+    "color":"{get:color}",
+    "fields":[
+        {
+            "name":"Pros",
+            "value":"{choose:{get:pros}%99|{get:wtf}%1}"
+        },
+        {
+            "name":"Cons",
+            "value":"{get:cons}"
+        }
+    ],
+    "author":
+    {
+        "name":"{user}",
+        "icon_url":"{avatar}"
+    },
+    "footer":
+    {
+        "text":"Made by {user:576819686877036584}",
+        "icon_url":"{avatar:576819686877036584}"
+    }
+}
 }
